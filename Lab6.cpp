@@ -1,9 +1,10 @@
-﻿//Дан вектор x из n целых чисел и квадратная матрица A порядка n.
+//Дан вектор x из n целых чисел и квадратная матрица A порядка n.
 //Строки матрицы A заменить вектором x.
 
 #include <iostream>
 #include <Windows.h>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
@@ -34,10 +35,30 @@ int main()
 	{
 		for (int j = 0; j < n; j++)
 		{
+			A[i][j] = rand() % 10 + 1;
+		}
+	}
+
+	cout << "Исходная матрица: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << A[i][j] << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
 			A[i][j] = x[j];
 		}
 	}
 
+	cout << "Результат замены строк матрицы на вектор: " << endl;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
